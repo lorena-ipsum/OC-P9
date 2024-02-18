@@ -7,3 +7,47 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+
+.fade-in-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.fade-in-section.fade-in {
+    opacity: 1;
+}
+ 
+ .banner {
+    background-image: none !important;
+    position: relative;
+    min-height: 806px;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animation de flottement */
+.banner img {
+    animation: floatAnimation 10s infinite alternate; 
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}

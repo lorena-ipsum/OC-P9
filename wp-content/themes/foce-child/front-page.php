@@ -4,18 +4,20 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-    <section class="banner">
-       <!-- Configuration de la vidéo de fond en boucle, avec une image en poster qui sera afficher pendant le chargement de la video -->
-       <div class="video-background">
-           <video autoplay loop muted>
-               <source src="/P9/wp-content/themes/foce-child/assets/videos/Studio_Koukaki-vidéo-header-sans-son.mp4" poster="/P9/wp-content/themes/foce-child/assets/images/banner.png" type="video/mp4">
-               <!-- Ajoutez d'autres formats vidéo ici (WebM, Ogg, etc.) pour une compatibilité maximale -->
-           </video>
-       </div>
-       <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
-   </section>
-        <section id="#story" class="story">
-            <h2>L'histoire</h2>
+        <section class="banner fade-in">
+            <div class="video-background">
+                <video autoplay loop muted>
+                    <source src="/P9/wp-content/themes/foce-child/assets/videos/Studio_Koukaki-vidéo-header-sans-son.mp4" poster="/P9/wp-content/themes/foce-child/assets/images/banner.png" type="video/mp4">
+                    <!-- Adicione outros formatos de vídeo aqui (WebM, Ogg, etc.) para máxima compatibilidade -->
+                </video>
+            </div>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants" class="floating-image" id="logo">
+        </section>
+    </main>
+
+
+        <section id="#story" class="story fade-in">
+            <h2 class= "section--titre__focus"><span>L'histoire</span></h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
@@ -30,8 +32,8 @@ get_header();
             $characters_query = new WP_Query($args);
             ?>
             <article id="characters">
-                <div class="main-character">
-                    <h3>Les personnages</h3>
+                <div class="main-character fade-in">
+                    <h3 class= "section--titre__focus"><span>Les personnages</span></h3>
                     <?php
                     $main_character = $characters_query->posts[0];
                     echo '<figure>';
@@ -55,24 +57,30 @@ get_header();
                     ?>
                 </div>
             </article>
-            <article id="place">
+            <article id="place" class="fade-in">
                 <div>
-                    <h3>Le Lieu</h3>
+                    <h3 class= "section--titre__focus"><span>Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
             </article>
         </section>
-
-
-        <section id="studio">
-            <h2>Studio Koukaki</h2>
+        <section id="studio" class="fade-in">
+            <h2 class= "section--titre__focus"><span>Studio Koukaki</span></h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
                 <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
             </div>
-            </section>
-    </main><!-- #main -->
+        </section>
 
-<?php
-get_footer();
+
+        <section class="fade-in">
+            <h2 class= "section--titre__focus"><span>oscar manoooo</span></h2>
+            <p><?php get_template_part( 'oscar' ); ?>
+        </section>
+
+        
+
+
+    </main><!-- #main -->
+<?php get_footer(); ?>

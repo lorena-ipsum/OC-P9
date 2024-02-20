@@ -8,7 +8,6 @@
  Version: 0.1
  */
 
- 
  .banner {
     background-image: none !important;
     position: relative;
@@ -33,14 +32,53 @@
 
 /* Animation de flottement */
 .banner img {
-    animation: floatAnimation 10s infinite alternate; 
+    position: absolute;
+    bottom: 50px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floatAnimation 3s ease-in-out infinite alternate;
 }
 
 @keyframes floatAnimation {
     0% {
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
     }
     100% {
-        transform: translateY(-10%);
+        transform: translateX(-50%) translateY(-20px);
     }
 }
+
+/* Les fleurs sont bourées et tournent tournent*/
+.story__article::after {
+    content: url(./assets/images/Hibiscus.png);
+    position: absolute;
+    left: 87%;
+    top: 8em;
+    position: absolute; /* Posicione o elemento de acordo com as necessidades */
+    transform: translate(-50%, -50%); /* Centralize o elemento */
+    animation: rotateAnimation 5s linear infinite;
+}
+
+.story h2::after{
+    content: url(./assets/images/Sunflower.png);
+    position: absolute;
+    left: 2em;
+    top: 7.5em;
+    transform: translate(-50%, -50%);
+    animation: rotateAnimation 5s linear infinite;
+}
+
+
+
+@keyframes rotateAnimation {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg); /* Comece sem rotação */
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg); /* Termine com 360 graus de rotação */
+    }
+}
+
+
+/*Pour l'effets sur les titres*/
+

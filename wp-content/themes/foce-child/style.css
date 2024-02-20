@@ -8,13 +8,6 @@
  Version: 0.1
  */
 
-.fade-in-section {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.fade-in-section.fade-in {
-    opacity: 1;
-}
  
  .banner {
     background-image: none !important;

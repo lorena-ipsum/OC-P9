@@ -8,6 +8,7 @@
  Version: 0.1
  */
 
+ /*Hero header*/
  .banner {
     background-image: none !important;
     position: relative;
@@ -30,10 +31,10 @@
     object-fit: cover;
 }
 
-/* Animation de flottement */
+/* Animation de flottement du titre*/
 .banner img {
     position: absolute;
-    bottom: 50px; /* Ajuste conforme necessário */
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     animation: floatAnimation 3s ease-in-out infinite alternate;
@@ -63,7 +64,7 @@
 }
 
 #studio h2::after{
-    content: url("./assets/images/flower.png"); /*mille-fleur orange*/
+    content: url(./assets/images/flower.png); /*mille-fleur orange*/
     left: 87%;
     top: 2em;
 }
@@ -109,4 +110,29 @@
 
 .faster-rotation {
     animation: rotateAnimation 4s linear infinite;
+}
+
+/*Les titres*/
+
+.section--titre__focus {opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.section--titre__focus {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Effet fade-in pour les sections */
+.slide-up {
+    opacity: 0; /* Definir opacidade inicial como 0 */
+    transform: translate(0, 10vh);
+    transition: opacity 1s ease, transform 1s ease; /* Adicionar transição de opacidade e transformação */
+}
+  
+.slide-up.visible {
+    opacity: 1; /* Alterar opacidade para 1 quando a classe .visible for adicionada */
+    transform: translate(0, 0);
 }

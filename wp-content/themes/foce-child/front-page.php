@@ -16,8 +16,8 @@ get_header();
     </main>
 
 
-        <section id="#story" class="story fade-in">
-            <h2 class= "section--titre__focus"><span>L'histoire</span></h2>
+        <section id="#story" class="story slide-up">
+            <h2><span class= "section--titre__focus">L'histoire</span></h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
@@ -32,8 +32,8 @@ get_header();
             $characters_query = new WP_Query($args);
             ?>
             <article id="characters">
-                <div class="main-character fade-in">
-                    <h3 class= "section--titre__focus"><span>Les personnages</span></h3>
+                <div class="main-character slide-up">
+                    <h3><span class= "section--titre__focus">Les personnages</span></h3>
                     <?php
                     $main_character = $characters_query->posts[0];
                     echo '<figure>';
@@ -57,15 +57,15 @@ get_header();
                     ?>
                 </div>
             </article>
-            <article id="place" class="fade-in">
+            <article id="place" class="slide-up">
                 <div>
-                    <h3 class= "section--titre__focus"><span>Le Lieu</span></h3>
+                    <h3><span class= "section--titre__focus">Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
             </article>
         </section>
-        <section id="studio" class="fade-in">
+        <section id="studio" class="slide-up">
             <h2 class= "section--titre__focus"><span>Studio Koukaki</span></h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
@@ -74,7 +74,7 @@ get_header();
         </section>
 
 
-        <section class="fade-in">
+        <section class="slide-up">
             <h2 class= "section--titre__focus"><span>oscar manoooo</span></h2>
             <p><?php get_template_part( 'oscar' ); ?>
         </section>

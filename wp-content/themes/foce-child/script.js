@@ -27,5 +27,28 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//Animation sur les Titres
+//Animation sur fleurs lors du scroll
+// Obtenez tous les éléments que vous souhaitez animer
+const animatedElements = document.querySelectorAll('.story__article::after, .story h2::after, #studio h2::after, #studio h2::before, .site-footer::before, .site-footer::after');
 
+// Ajoutez une classe pour accélérer l'animation
+function accelerateAnimation() {
+    // Boucle à travers tous les éléments animés
+    animatedElements.forEach((element) => {
+        // Vérifiez si l'élément est visible à l'écran
+        var position = element.getBoundingClientRect();
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+            // Si l'élément est partiellement visible, accélérez l'animation
+            element.classList.add('faster-rotation');
+        } else {
+            // Sinon, supprimez la classe d'accélération
+            element.classList.remove('faster-rotation');
+        }
+    });
+}
+
+// Écoutez l'événement de défilement et appelez la fonction d'accélération de l'animation
+window.addEventListener('scroll', accelerateAnimation);
+
+// Assurez-vous d'appeler la fonction une fois au chargement de la page pour initialiser l'animation
+accelerateAnimation();

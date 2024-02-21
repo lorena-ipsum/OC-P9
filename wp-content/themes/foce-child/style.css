@@ -48,37 +48,65 @@
     }
 }
 
-/* Les fleurs sont bourées et tournent tournent*/
+
+/* Les fleurs */
 .story__article::after {
-    content: url(./assets/images/Hibiscus.png);
-    position: absolute;
-    left: 87%;
-    top: 8em;
-    position: absolute; /* Posicione o elemento de acordo com as necessidades */
-    transform: translate(-50%, -50%); /* Centralize o elemento */
-    animation: rotateAnimation 5s linear infinite;
+    content: url(./assets/images/Hibiscus.png); /*hibiscus de l'histoire*/
+    left: 86%;
+    top: 8em;   
 }
 
 .story h2::after{
-    content: url(./assets/images/Sunflower.png);
-    position: absolute;
+    content: url(./assets/images/Sunflower.png);/*margarida de l'histoire*/
     left: 2em;
     top: 7.5em;
-    transform: translate(-50%, -50%);
-    animation: rotateAnimation 5s linear infinite;
 }
 
+#studio h2::after{
+    content: url("./assets/images/flower.png"); /*mille-fleur orange*/
+    left: 87%;
+    top: 2em;
+}
 
+#studio h2::before{
+    content: url(./assets/images/random_flower.png);/*fleur purple studio*/
+    left: 2em;
+    top: 1.5em;
+}
+
+.site-footer::before{
+    content: url(./assets/images/Sunflower.png);/*margarida footer*/
+    left: 4em;
+    top: 5em;
+}
+
+.site-footer::after{
+    content: url(./assets/images/orchid.png);/*violeta violet */
+    left: 87%;
+    top: 2em;
+}
+
+/* Les fleurs sont bourées et tournent tournent*/
+.story__article::after,
+.story h2::after,
+#studio h2::after,
+#studio h2::before,
+.site-footer::before {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateAnimation 10s linear infinite;
+}
 
 @keyframes rotateAnimation {
     from {
-        transform: translate(-50%, -50%) rotate(0deg); /* Comece sem rotação */
+        transform: translate(-50%, -50%) rotate(0deg); /* Comence sans rotation */
     }
     to {
-        transform: translate(-50%, -50%) rotate(360deg); /* Termine com 360 graus de rotação */
+        transform: translate(-50%, -50%) rotate(360deg); /* Finalize avec 360 graus de rotation */
     }
 }
 
-
-/*Pour l'effets sur les titres*/
-
+.faster-rotation {
+    animation: rotateAnimation 4s linear infinite;
+}

@@ -8,7 +8,7 @@
  Version: 0.1
  */
 
- /*Hero header*/
+ /* --OK Hero header*/
  .banner {
     background-image: none !important;
     position: relative;
@@ -31,7 +31,7 @@
     object-fit: cover;
 }
 
-/* Animation de flottement du titre*/
+/* --OK Animation de flottement du titre*/
 .banner img {
     position: absolute;
     bottom: 50px;
@@ -50,9 +50,10 @@
 }
 
 
-/* Les fleurs */
+/* -- OK Les fleurs */
 .story__article::after {
     content: url(./assets/images/Hibiscus.png); /*hibiscus de l'histoire*/
+    transform-origin: center ;
     left: 86%;
     top: 8em;   
 }
@@ -61,40 +62,45 @@
     content: url(./assets/images/Sunflower.png);/*margarida de l'histoire*/
     left: 2em;
     top: 7.5em;
+    transform-origin: center ;
 }
 
 #studio h2::after{
     content: url(./assets/images/flower.png); /*mille-fleur orange*/
     left: 87%;
     top: 2em;
+    transform-origin: center ;
 }
 
 #studio h2::before{
     content: url(./assets/images/random_flower.png);/*fleur purple studio*/
     left: 2em;
     top: 1.5em;
+    transform-origin: center ;
 }
 
 .site-footer::before{
     content: url(./assets/images/Sunflower.png);/*margarida footer*/
     left: 4em;
     top: 5em;
+    transform-origin: center ;
 }
 
 .site-footer::after{
     content: url(./assets/images/orchid.png);/*violeta violet */
     left: 87%;
     top: 2em;
+    transform-origin: center ;
 }
 
-/* Les fleurs sont bourées et tournent tournent*/
+/* --NO OK (p*tain de scroller veux pas) Les fleurs sont bourées et tournent tournent*/
 .story__article::after,
 .story h2::after,
 #studio h2::after,
 #studio h2::before,
+.site-footer::after,
 .site-footer::before {
     position: absolute;
-    border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: rotateAnimation 10s linear infinite;
 }
@@ -112,20 +118,8 @@
     animation: rotateAnimation 4s linear infinite;
 }
 
-/*Les titres*/
 
-.section--titre__focus {opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.section--titre__focus {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* Effet fade-in pour les sections */
+/* OK Effet fade-in pour les sections */
 .slide-up {
     opacity: 0; /* Definir opacidade inicial como 0 */
     transform: translate(0, 10vh);
@@ -136,3 +130,16 @@
     opacity: 1; /* Alterar opacidade para 1 quando a classe .visible for adicionada */
     transform: translate(0, 0);
 }
+
+/*NO OK Les titres*/
+.section--titre__focus {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.section--titre__focus.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+

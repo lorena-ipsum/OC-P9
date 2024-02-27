@@ -5,7 +5,7 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner fade-in">
-            <!--  Video en back ground here - with image as 'poster while video is charging-->
+            <!--  Video en back ground here - with image as 'poster while video is charging -->
             <div class="video-background">
                 <video autoplay loop muted>
                     <source src="/P9/wp-content/themes/foce-child/assets/videos/Studio_Koukaki-vidéo-header-sans-son.mp4" poster="/P9/wp-content/themes/foce-child/assets/images/banner.png" type="video/mp4">
@@ -18,45 +18,15 @@ get_header();
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
-            <?php
-            $args = array(
-                'post_type' => 'characters',
-                'posts_per_page' => -1,
-                'meta_key'  => '_main_char_field',
-                'orderby'   => 'meta_value_num',
+            
+           
+                <?php get_template_part('template-parts/characters'); ?>
+            
 
-            );
-            $characters_query = new WP_Query($args);
-            ?>
-            <article id="characters">
-                <div class="main-character slide-up">
-                    <h3> <span class= "section--titre__focus">Les personnages</span></h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
-                </div>
-                <div class="other-characters">
-                    <?php
-                    while ( $characters_query->have_posts() ) {
-                        $characters_query->the_post();
-                        echo '<figure>';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '<figcaption>';
-                        the_title();
-                        echo'</figcaption>';
-                        echo '</figure>';
-                    }
-                    ?>
-                </div>
-            </article>
             <article id="place" class="slide-up">
                 <div>
                     <h3><span class= "section--titre__focus">Le Lieu</span></h3>
+                    <!-- <div class=lieu--nuage><img scr="/assets/images/big_cloud.png"> -->
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
             </article>
@@ -71,11 +41,8 @@ get_header();
 
 
         <section class="slide-up"> 
-            <?php get_template_part('oscar'); ?>
+            <p><?php get_template_part('template-parts/oscar'); ?></p>
         </section>
-
-        
-
 
     </main>
 <?php get_footer(); ?>

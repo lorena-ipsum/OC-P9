@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+/*
 //--NO ANIMATION ROTATE-FLOWERS ACELERATE AU SCROLL
 document.addEventListener('DOMContentLoaded', function() {
     var scrollSpeed = 10; // Vitesse de défilement initiale
@@ -102,10 +102,24 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         adjustRotationSpeed();
     });
-});
+});*/
 
 
+/*
 //--NO  FLUFFY CLOUD
+window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+
+    // Calculer la nouvelle position gauche en fonction du défilement
+    var newPosition = -300 * (scrollPosition / (document.body.scrollHeight - window.innerHeight));
+
+    // Limiter la nouvelle position à -300px au minimum
+    newPosition = Math.max(newPosition, -300);
+
+    // Appliquer la nouvelle position à l'élément
+    document.getElementById('lieu--nuage').style.left = newPosition + 'px';
+}); */
+
 
 //--NO  CARROUSSEL DES CHARACTERS
 

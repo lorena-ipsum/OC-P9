@@ -49,8 +49,6 @@
     }
 }
 
-
-
 /* Effet fade-in pour les sections */
 .slide-up {
     opacity: 0; /* Definir opacidade inicial como 0 */
@@ -73,7 +71,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /*Les fleurs */
 .article.story__article::after {
@@ -143,12 +140,35 @@
 
 
 /*OSCAR NOMINATION*/
-.nomination-section {
+.oscar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+    margin-top: 3em;
+}
+.oscar--titulo {
+    background-image: url(/assets/images/orange_place_bg.png);
+    background-size: cover;
+    width: 60%;
+    padding: 15px;
 }
 
-.nomination-section-content h2 {
-    margin-right: 20px;
+#oscar img {
+    width: 40%;
 }
+
+/*Le lieu
+.story #place {
+    display: flex;
+    background-image: url(./assets/images/image_place.png);
+    width: 100%;
+    min-height: 699px;
+    background-size: cover;
+}
+
+.lieu--nuage {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transition: left 0.5s ease; /* Ajout d'une transition pour une animation douce */

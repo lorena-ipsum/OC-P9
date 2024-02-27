@@ -8,7 +8,7 @@
  Version: 0.1
  */
 
- /* --OK Hero header*/
+ /*Hero header*/
  .banner {
     background-image: none !important;
     position: relative;
@@ -31,7 +31,7 @@
     object-fit: cover;
 }
 
-/* --OK Animation de flottement du titre*/
+/*Animation de flottement du titre*/
 .banner img {
     position: absolute;
     bottom: 50px;
@@ -50,18 +50,41 @@
 }
 
 
-/* -- OK Les fleurs */
-.story__article::after {
-    content: url(./assets/images/Hibiscus.png); /*hibiscus de l'histoire*/
-    transform-origin: center ;
-    left: 86%;
-    top: 8em;   
+
+/* Effet fade-in pour les sections */
+.slide-up {
+    opacity: 0; /* Definir opacidade inicial como 0 */
+    transform: translate(0, 10vh);
+    transition: opacity 1s ease, transform 1s ease; /* Adicionar transição de opacidade e transformação */
+}
+  
+.slide-up.visible {
+    opacity: 1; /* Alterar opacidade para 1 quando a classe .visible for adicionada */
+    transform: translate(0, 0);
+}
+/*Les titres*/
+.section--titre__focus {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.section--titre__focus.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*Les fleurs */
+.article.story__article::after {
+    content: url(./assets/images/Hibiscus.png); /*hibiscus de l'histoire*/ 
+    transform-origin: center ; 
+    left: 87.5%;
+    top: 6.5%;
 }
 
 .story h2::after{
     content: url(./assets/images/Sunflower.png);/*margarida de l'histoire*/
-    left: 2em;
-    top: 7.5em;
     transform-origin: center ;
 }
 
@@ -93,7 +116,7 @@
     transform-origin: center ;
 }
 
-/* --NO OK (p*tain de scroller veux pas) Les fleurs sont bourées et tournent tournent*/
+/*Les fleurs sont bourées et tournent tournent*/
 .story__article::after,
 .story h2::after,
 #studio h2::after,
@@ -119,27 +142,13 @@
 }
 
 
-/* OK Effet fade-in pour les sections */
-.slide-up {
-    opacity: 0; /* Definir opacidade inicial como 0 */
-    transform: translate(0, 10vh);
-    transition: opacity 1s ease, transform 1s ease; /* Adicionar transição de opacidade e transformação */
-}
-  
-.slide-up.visible {
-    opacity: 1; /* Alterar opacidade para 1 quando a classe .visible for adicionada */
-    transform: translate(0, 0);
+/*OSCAR NOMINATION*/
+.nomination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/*NO OK Les titres*/
-.section--titre__focus {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+.nomination-section-content h2 {
+    margin-right: 20px;
 }
-
-.section--titre__focus.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
